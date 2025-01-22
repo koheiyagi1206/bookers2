@@ -2,6 +2,21 @@
   <!-- User info -->
 
   <h2>User info</h2>
+  <%= image_tag user_myself.get_image(100, 100) %>
+
+  <table class = "table">
+    <tbody>
+      <tr></tr>
+      <tr>
+        <th>name</th>
+        <th><%= user_myself.name %></th>
+      </tr>
+      <tr>
+        <th>introduction</th>
+        <th><%= user_myself.introduction %></th>
+      </tr>
+    </tbody>
+  </table>
 
   <!-- end of User info -->
 
