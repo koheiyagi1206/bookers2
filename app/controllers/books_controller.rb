@@ -14,6 +14,12 @@ class BooksController < ApplicationController
     @user = User.find(current_user.id)
   end
 
+  def show
+    @book_new = Book.new
+    @book = Book.find(params[:id])
+    @user = User.find(@book.user_id)
+  end
+
   private
     def book_params
       params.require(:book).permit(:title, :body)

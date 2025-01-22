@@ -1,1 +1,44 @@
-<h1>Show Page(Books)</h1>
+<p id = "notice"></p> <!-- 位置調整用の空白 -->
+
+<div class = "container">
+  <div class = "row">
+    <%= render partial: "layouts/sidebar", locals: {book: @book_new, user: @user} %>
+
+    <div class = "col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+
+      <table class = "table">
+        <tbody>
+          <tr>
+            <td>
+              <a href = "<%= user_path(@user.id) %>">
+                <%= image_tag @user.get_image(100, 100) %><br />
+                <%= @user.name %>
+              </a>
+            </td>
+            <td>
+              <a href = "<%= book_path %>">
+                <%= @book.title %>
+              </a>
+            </td>
+            <td>
+              <%= @book.body %>
+            </td>
+            <% if @user.id == current_user.id %>
+              <td>
+                <a class = "btn btn-sm btn-success" href = "<%= edit_book_path %>">
+                  Edit
+                </a>
+              </td>
+              <td>
+                <a data-confirm = "本当に消しますか？" class = "btn btn-sm btn-danger" href = "<%= book_path %>" data-method = "delete">
+                  Destroy
+                </a>
+              </td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
