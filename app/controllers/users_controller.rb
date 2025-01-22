@@ -17,6 +17,12 @@ class UsersController < ApplicationController
     redirect_to user_path(user.id)
   end
 
+  def show
+    @book = Book.new
+    @books = Book.all
+    @user = User.find(params[:id])
+  end
+
   private
     def user_params
       params.require(:user).permit(:name, :introduction)
