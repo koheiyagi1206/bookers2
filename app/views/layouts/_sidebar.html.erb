@@ -2,23 +2,31 @@
   <!-- User info -->
 
   <h2>User info</h2>
-  <%= image_tag user_myself.get_image(100, 100) %>
+  <%= image_tag user.get_image(100, 100) %>
 
   <table class = "table">
     <tbody>
       <tr></tr>
       <tr>
         <th>name</th>
-        <th><%= user_myself.name %></th>
+        <th><%= user.name %></th>
       </tr>
       <tr>
         <th>introduction</th>
-        <th><%= user_myself.introduction %></th>
+        <th><%= user.introduction %></th>
       </tr>
     </tbody>
   </table>
 
   <!-- end of User info -->
+
+  <!-- Edit User Button -->
+  <div class = "row">
+    <a class = "btn btn-outline-secondary btn-block" href = "<%= edit_user_path(user.id) %>">
+      <i class="fa-solid fa-user-gear"></i>
+    </a>
+  </div>
+  <!-- end of Edit User Button -->
 
 
   <!-- New Book -->
