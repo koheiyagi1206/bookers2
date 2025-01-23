@@ -9,7 +9,7 @@
         <%= form_with model: @user do |u| %>
 
           <% if @user.errors.any? %>
-            <%= @user.errors.count %>error prohibited this obj from being saved:
+            <h3><%= @user.errors.count %>error prohibited this obj from being saved:</h3>
             <ul>
               <% @user.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
